@@ -10,14 +10,14 @@
 # Ou abrir o arquivo start.bat que está sendo enviado junto ao código.
 
 import curses;
-import misc;
-import exponencial;
-import segundoGrau;
-import matriz;
+import src.misc;
+import src.exponencial;
+import src.segundoGrau;
+import src.matriz;
 
-titulo = misc.titulo;
-subtitulo = misc.subtitulo;
-opcoes = misc.opcoes;
+titulo = src.misc.titulo;
+subtitulo = src.misc.subtitulo;
+opcoes = src.misc.opcoes;
 
 def printMenu(stdscr, selecionado):
     stdscr.clear();
@@ -49,15 +49,15 @@ def main(stdscr):
         elif key == curses.KEY_ENTER or key in [10,13]:
             if(selecionado==0):
                 while 1:
-                    segundoGrau.menu(stdscr);
+                    src.segundoGrau.menu(stdscr);
                     break;
             if(selecionado==1):
                 while 1:
-                    exponencial.menu(stdscr);
+                    src.exponencial.menu(stdscr);
                     break;
             if(selecionado==2):
                 while 1:
-                    matriz.menu(stdscr);
+                    src.matriz.menu(stdscr);
                     break;
             if(selecionado==3): break;
         printMenu(stdscr, selecionado);
