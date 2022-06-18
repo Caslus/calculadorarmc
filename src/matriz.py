@@ -126,7 +126,10 @@ def mostrarMatriz(stdscr, matriz, linha):
         stdscr.move(linha+i,0);
         stdscr.clrtoeol();
 
-        if i == 0:
+        if i == 0 and i == len(matriz)-1:
+            stdscr.addstr(linha+i, 0, "[");
+            stdscr.addstr(linha+i, len(matriz[i])*6+4, "]");
+        elif i == 0:
             stdscr.addstr(linha+i, 0, "ᒥ");
             stdscr.addstr(linha+i, len(matriz[i])*6+4, "ᒣ");
         elif i == len(matriz)-1:
